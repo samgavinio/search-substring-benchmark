@@ -22,22 +22,22 @@ Pre-requisite: There is an official way of setting a workspace for Go [How to wr
 
 ```
 cd search/
-go test -bench=.
+go test -bench=. -benchmem
 ```
 
 #### Results
 
 ```
-BenchmarkNaiveSearch-4                     	100000000	        11.5 ns/op
-BenchmarkNaiveSearchWithLength-4           	100000000	        11.5 ns/op
-BenchmarkNaiveSearchReversed-4             	300000000	         4.85 ns/op
-BenchmarkNaiveSearchReversedWithLength-4   	300000000	         4.74 ns/op
-BenchmarkRabinKarp-4                       	100000000	        14.9 ns/op
-BenchmarkRabinKarpWithLength-4             	100000000	        14.1 ns/op
-BenchmarkRabinKarpReversed-4               	200000000	         7.45 ns/op
-BenchmarkRabinKarpReversedWithLength-4     	200000000	         7.44 ns/op
-BenchmarkRegex-4                           	  200000	      8138 ns/op
-BenchmarkRegexWithLength-4                 	  100000	     12649 ns/op
+BenchmarkNaiveSearch-4                     	100000000	        11.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNaiveSearchWithLength-4           	100000000	        11.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNaiveSearchReversed-4             	300000000	         4.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNaiveSearchReversedWithLength-4   	300000000	         4.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRabinKarp-4                       	100000000	        14.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRabinKarpWithLength-4             	100000000	        14.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRabinKarpReversed-4               	200000000	         7.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRabinKarpReversedWithLength-4     	200000000	         7.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRegex-4                           	  200000	      7312 ns/op	   40312 B/op	      23 allocs/op
+BenchmarkRegexWithLength-4                 	  200000	     10982 ns/op	   42712 B/op	      37 allocs/op
 ```
 
 The results show what you would expect for a simple single character needle.
